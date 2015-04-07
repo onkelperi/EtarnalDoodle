@@ -15,6 +15,8 @@
   if(@$_POST['formSubmit'] == "Submit") {
     if (!empty($_POST['Name'])) {
       $User = $_POST['Name'];
+      $User = strtolower($User);
+      $User = ucfirst($User);
       $Cookie->SetCookie($User);
       if (!empty($_POST['Email'])) {
         if ($_POST['Email'] == $_POST['EmailConfirm']) {
